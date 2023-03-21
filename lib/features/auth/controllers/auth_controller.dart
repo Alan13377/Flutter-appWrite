@@ -14,18 +14,22 @@ final authControllerProvider =
 });
 
 final currentUserAccountProvider = FutureProvider((ref) async {
+  //*Future provider que tiene acceso a las propiedades y metodos de la clase
   final authController = ref.watch(authControllerProvider.notifier);
   return authController.currentUser();
 });
 
 class AuthController extends StateNotifier<bool> {
+  //*Instancia de la clase AuthApi
   final AuthAPI _authAPI;
   AuthController({required AuthAPI authAPI})
       : _authAPI = authAPI,
         super(false);
   //state = isLoading
 
+  //*Obtener los datos del usuario registrado
   Future<model.Account?> currentUser() => _authAPI.currentUserAccount();
+
   void signUp({
     required String email,
     required String password,

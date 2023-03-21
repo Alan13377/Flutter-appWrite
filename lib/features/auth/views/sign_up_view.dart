@@ -1,4 +1,3 @@
-import 'package:appwrite_flutter/common/loading_page.dart';
 import 'package:appwrite_flutter/constant/ui_constants.dart';
 import 'package:appwrite_flutter/features/auth/controllers/auth_controller.dart';
 import 'package:appwrite_flutter/features/auth/views/login_view.dart';

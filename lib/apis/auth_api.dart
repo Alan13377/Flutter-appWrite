@@ -91,10 +91,12 @@ class AuthAPI implements IAuthAPI {
     }
   }
 
+  //*Obtener los datos del usuario registrado como json
   @override
   Future<model.Account?> currentUserAccount() async {
     try {
       return _account.get();
+      //*Si no encuentra un valor el usuario no esta logueado
     } on AppwriteException {
       return null;
     } catch (e) {
